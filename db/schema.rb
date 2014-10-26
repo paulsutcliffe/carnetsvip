@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141025233731) do
+ActiveRecord::Schema.define(version: 20141026012721) do
+
+  create_table "distritos", force: true do |t|
+    t.string   "nombre"
+    t.string   "codigo_postal"
+    t.integer  "ciudad_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "socios", force: true do |t|
+    t.string   "nombre"
+    t.string   "apellido_paterno"
+    t.string   "apellido_materno"
+    t.string   "sexo"
+    t.integer  "dni"
+    t.string   "celular"
+    t.date     "fecha_de_nacimiento"
+    t.string   "email"
+    t.string   "direccion"
+    t.string   "distrito"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
