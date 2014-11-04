@@ -10,10 +10,10 @@
     = f.label :nombre
     = f.text_field :nombre, class: 'form-control'
   .form-group
-    = f.label :apellido_paterno
+    = f.label :apellido_paterno, 'Apellido Paterno'
     = f.text_field :apellido_paterno, class: 'form-control'
   .form-group
-    = f.label :apellido_materno
+    = f.label :apellido_materno, 'Apellido Materno'
     = f.text_field :apellido_materno, class: 'form-control'
 
   .row
@@ -22,7 +22,7 @@
       %br
       = f.select :sexo, Socio::SEXOS.collect { |i| [i]}, class: 'form-control'
     .form-group.col-lg-4
-      = f.label :dni
+      = f.label :dni, 'DNI'
       = f.number_field :dni, class: 'form-control'
     .form-group.col-lg-4
       = f.label :celular
@@ -36,11 +36,11 @@
     .form-group.col-lg-4
       = f.label :fecha_de_nacimiento
       %br
-      = f.date_select :fecha_de_nacimiento, class: 'form-control'
+      = f.date_select(:fecha_de_nacimiento, start_year: 1960, class: 'form-control')
 
   .row
     .form-group.col-lg-8
-      = f.label :direccion
+      = f.label :direccion, 'Dirección'
       = f.text_field :direccion, class: 'form-control'
     .form-group.col-lg-4.full-select
       = f.label :distrito

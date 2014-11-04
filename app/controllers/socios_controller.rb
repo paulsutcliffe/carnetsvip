@@ -23,7 +23,14 @@ class SociosController < ApplicationController
   def create
     @socio = Socio.new(socio_params)
     @socio.save
-    respond_with(@socio)
+    if @socio.save
+      NotificationsMailer.nuevo_socio(@socio).deliver
+      flash[:notice] = "Tus datos fueron enviados con éxito."
+      redirect_to root_path
+    else
+      flash[:notice] = "No se envió el mensaje, corrige los campos y vuelve a intentar."
+      redirect_to root_path
+    end
   end
 
   def update
