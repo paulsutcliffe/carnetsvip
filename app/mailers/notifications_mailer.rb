@@ -3,6 +3,6 @@ class NotificationsMailer < ActionMailer::Base
 
   def nuevo_socio(socio)
     @socio = socio
-    mail(:to => "gramirez@corpperusur.com", :reply_to => socio.email, :subject => "Mensaje de #{socio.nombre} #{socio.apellido_paterno}")
+    mail(:to => "mkt.bach@gmail.com", :reply_to => socio.email, :subject => "Mensaje de #{socio.nombre} #{socio.apellido_paterno}")
   end
 end
